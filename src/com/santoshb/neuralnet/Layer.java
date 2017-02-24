@@ -77,9 +77,13 @@ public class Layer {
 			// because we have a single hidden layer delta not change
 			for (int j = 0; j < input.length; j++) {
 				int previousWeightIndex = offset + j;
+				
 				nextError[j] = nextError[j] + weights[previousWeightIndex] * delta;
+				
 				float dw = input[j] * delta * learningRate;
+				
 				weights[previousWeightIndex] += dWeights[previousWeightIndex] * momentum + dw;
+				
 				dWeights[previousWeightIndex] = dw;
 			}
 			
