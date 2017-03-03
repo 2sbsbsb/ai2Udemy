@@ -1,25 +1,26 @@
 package com.santoshb.neuralnet;
 
-
-
 public class App {
 
+	
+	/**
+	 * @param args
+	 * @throws Exception
+	 */
 	public static void main(String[] args) throws Exception {
-		// Uncomment one by one to experiment
-		//sample();
-		//tryAnd();
+		
+	    // Uncomment one by one to experiment
+		 tryAnd();
 		//tryOr();
 		//tryXOr();
+		//trySampleData();
 	}
 
 
 
-	
-
-
 	/**
 	 */
-	private static void sample() {
+	private static void trySampleData() {
 		BackpropNeuralNetwork backpropagationNeuralNetworks = new BackpropNeuralNetwork(4, 6, 3);
 
 		for (int iterations = 0; iterations < NeuralNetConstants.ITERATIONS; iterations++) {
@@ -41,6 +42,9 @@ public class App {
 		}
 	}
 	
+	/**
+	 * 
+	 */
 	private static void tryAnd() {
 		float[][] trainingData = new float[][] {
 			new float[] {0,0},
@@ -59,6 +63,8 @@ public class App {
 	}
 
 	
+	/**
+	 */
 	private static void tryOr() {
 		float[][] trainingData = new float[][] {
 			new float[] {0,0},
@@ -76,6 +82,9 @@ public class App {
 		tryModel(trainingData,trainingResults);
 	}
 	
+	
+	/**
+	 */
 	private static void tryXOr() {
 		float[][] trainingData = new float[][] {
 			new float[] {0,0},
@@ -94,8 +103,13 @@ public class App {
 	}
 	
 	
+	/**
+	 * @param trainingData
+	 * @param trainingResults
+	 */
 	static void tryModel(float[][] trainingData, float[][] trainingResults) {
-		BackpropNeuralNetwork backpropagationNeuralNetworks = new BackpropNeuralNetwork(2, 3, 1);
+		
+		BackpropNeuralNetwork backpropagationNeuralNetworks = new BackpropNeuralNetwork(2, 1, 1);
 		
 		for (int iterations = 0; iterations < NeuralNetConstants.ITERATIONS; iterations++) {
 			

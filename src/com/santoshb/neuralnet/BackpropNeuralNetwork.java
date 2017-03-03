@@ -51,8 +51,8 @@ public class BackpropNeuralNetwork {
 		
 		for (int i = 0; i < error.length; i++) {
 			error[i] = targetOutput[i] - calculatedOutput[i]; 
-		}
-		
+		}		
+		// Start training from the output (Remember backward propagation)
 		for (int i = layers.length - 1; i >= 0; i--) {
 			error = layers[i].train(error, learningRate, momentum);
 		}
